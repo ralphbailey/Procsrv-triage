@@ -8,7 +8,7 @@ The goal of this is to triage a computer infected by a malicious file and create
 ##
 
 ## Executive Summary
-On January 14, 2024, at approximately 6:00 am the security operations team was notified of suspicious activity on a network computer. The malicious file performed discovery of computer hardware information and established a successful internet connection with an outside network. The malicious file did not steal any company data or information. No company user information was impacted and no other computers on the network were affected by this. 
+On January 14, 2024, at approximately 6:00 am the security operations team was notified that a network computer was had been potentially compromised by malware. After further investigation, it was determed that the machine in question had likely been compromised by a trojan - a piece of malware that would potentially give an adversary unauthorized access to the compromised machine, the ability to move throughout the network, perform reconnaissance activities, and potentially exfiltrate data out of the network. The security operations team is confident that the malicious file did not steal any company data or information. No company user information was impacted and no other computers on the network were affected by this. 
 
 ##
 
