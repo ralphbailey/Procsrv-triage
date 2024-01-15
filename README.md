@@ -58,31 +58,48 @@ The strings of **procsrv.exe** were dumped using the **cmdlet** of strings and e
 
 This trojan also has a behavior of **Persistence** by creating an autostart registry key pointing to binary in C:\Windows (MITRE T1547.001), and **Defense Evasion** of running a DLL by calling functions (MITRE T1218.011). 
 
-Finally, there is history of contacting **dropbox** via an **IP address** range of **162.125.X.X**. (Figure 11.1 and 11.2)
+Finally, there is history of contacting **dropbox** via an **IP address** range of **162.125.X.X**. (Figure 13.1 and 13.2)
 ![strings1](https://i.imgur.com/eBFyB2M.png)
 ![network1](https://i.imgur.com/vUGLZck.png)
 
-The strings of **lanman[.]dll** was dumped and we can see it calling **procsrv[.]exe** (Figure 12.1)
+Using the cmdlet of Get-CimInstance -ClassName Win32_UserAccount -Property * (Figure 14.1), we can see what the trojan was querying (Figure 14.2). When we change the cmdlet to Win32_ComputerSystem, again we can see a ton of information here in regards to our system. (Figure 15)
+
+![useraccount](https://i.imgur.com/bgD6p0V.png)
+![processor](https://i.imgur.com/wQ7aWRS.png)
+
+The strings of **lanman[.]dll** was dumped and we can see it calling **procsrv[.]exe** (Figure 16.1)
 
 ![strings2](https://i.imgur.com/T5e01FR.png)
 
-When viewing the current running processes using Process Explorer, we see **procsrv[.]exe** with no parent or child processes. **Procsrv[.]exe** has a **PID** of **5332**. (Figure 13.1)
+When viewing the current running processes using Process Explorer, we see **procsrv[.]exe** with no parent or child processes. **Procsrv[.]exe** has a **PID** of **5332**. (Figure 17.1)
 
 ![procexp](https://i.imgur.com/zrKtdQK.png)
 
-Inside the properties of **procsrv[.]exe** under the TCP/IP tab is an established connection to IP Address **162[.]125[.]6[.]8** using protocol **443**. (Figure 14.1)
+Inside the properties of **procsrv[.]exe** under the TCP/IP tab is an established connection to IP Address **162[.]125[.]6[.]8** using protocol **443**. (Figure 18.1)
 
 ![procexp2](https://i.imgur.com/tX4n8VS.png)
 
-When viewing real-time system, registry, and process/thread activity using Process Monitor and filtering for PID 5332, we can see it reading various registry hives including **HKCR\InprocServer32** and **HKCU\InprocServer32**. (Figure 15.1)
-Next, we can see that **PID 5332** is connecting with IP Address **162[.]125[.]6[.]18**. (Figure 16.1)
+When viewing real-time system, registry, and process/thread activity using Process Monitor and filtering for PID 5332, we can see it reading various registry hives including **HKCR\InprocServer32** and **HKCU\InprocServer32**. (Figure 19.1)
+Next, we can see that **PID 5332** is connecting with IP Address **162[.]125[.]6[.]18**. (Figure 20.1)
 
 ![procmon1](https://imgur.com/QCVFuwe.png)
 ![procmon2](https://i.imgur.com/4h3kXq1.png)
 
-Finally, inside Wireshark we can see communication with IP Address 162[.]125[.]6[.]18. (Figure 17.1)
+Inside Wireshark we can see communication with IP Address 162[.]125[.]6[.]18. (Figure 21.1)
+
 ![wireshark](https://i.imgur.com/r71rPi5.png)
 
+When performing a **nslookup** and **whois** of the IP Address, it returns as being a **non-existent** domain. (Figure 22.2)
+
+![whois](https://i.imgur.com/LZTaFDd.png)
+
+While viewing domain information using **Domain Dossier**, the domain in question is registered to **Dropbox**, (Figure 21.2). Next, we can see the certificate information, again, is also registered to **Dropbox**. (Figure 23.1)
+
+![dd1](https://i.imgur.com/MaPJycE.png)
+![dd2](https://i.imgur.com/iW7cQGX.png)
+
+Finally, when viewing the website of the IP Address, it shows as **Dropbox** (Figure 23.1) returning an error of **404** (Figure 24.2)
+![web](https://i.imgur.com/KIbJKMV.png)
 ##
 
 ## Remediations
