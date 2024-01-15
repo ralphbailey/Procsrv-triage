@@ -98,7 +98,7 @@ While viewing domain information using **Domain Dossier**, the domain in questio
 ![dd1](https://i.imgur.com/MaPJycE.png)
 ![dd2](https://i.imgur.com/iW7cQGX.png)
 
-Finally, when viewing the website of the IP Address, it shows as **Dropbox** (Figure 25.1) returning an error of **404** (Figure 26.2)
+Finally, when viewing the website of the IP Address, it shows as **Dropbox** (Figure 25.1) returning an error of **404** (Figure 25.2)
 ![web](https://i.imgur.com/KIbJKMV.png)
 ##
 
