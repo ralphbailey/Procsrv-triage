@@ -93,12 +93,12 @@ When performing a **nslookup** and **whois** of the IP Address, it returns as be
 
 ![whois](https://i.imgur.com/LZTaFDd.png)
 
-While viewing domain information using **Domain Dossier**, the domain in question is registered to **Dropbox**, (Figure 21.2). Next, we can see the certificate information, again, is also registered to **Dropbox**. (Figure 23.1)
+While viewing domain information using **Domain Dossier**, the domain in question is registered to **Dropbox**, (Figure 23.2). Next, we can see the certificate information, again, is also registered to **Dropbox**. (Figure 24.1)
 
 ![dd1](https://i.imgur.com/MaPJycE.png)
 ![dd2](https://i.imgur.com/iW7cQGX.png)
 
-Finally, when viewing the website of the IP Address, it shows as **Dropbox** (Figure 23.1) returning an error of **404** (Figure 24.2)
+Finally, when viewing the website of the IP Address, it shows as **Dropbox** (Figure 25.1) returning an error of **404** (Figure 26.2)
 ![web](https://i.imgur.com/KIbJKMV.png)
 ##
 
